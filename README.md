@@ -7,3 +7,4 @@ An example of English text tone detection with [Hugging Face](https://huggingfac
 
 Tests GitHub Actions
 Violetta16
+Виолетта16
