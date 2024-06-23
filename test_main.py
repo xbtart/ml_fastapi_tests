@@ -24,3 +24,16 @@ def test_predict_negative():
     json_data = response.json()
     assert response.status_code == 200
     assert json_data['label'] == 'NEGATIVE'
+
+
+def test_predict():
+    response = client.post("/predict/", json={"text": "I am happy"})
+    assert response.status_code == 200
+    assert response.json() == {"mood": "happy"}  # Пример
+
+
+def test_model_info():
+    response = client.get("/model_info/")
+    assert response.status_code == 200
+    assert response.json() == {"model": "Sentiment Analysis Model",
+                               "version": "1.0"}
